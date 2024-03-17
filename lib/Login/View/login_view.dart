@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_task/Login/Widget/Custom_Form_Field.dart';
 import 'package:graduation_task/Login/Widget/custom_bottom..dart';
+import 'package:graduation_task/ScanFAce/ScanFaceView.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -43,7 +44,9 @@ class _LoginViewState extends State<LoginView> {
             height: 40,
           ),
           DefaultButton(
-            function: () {},
+            function: () {
+              navigateTo(context, ScanFaceView());
+            },
             text: 'Register',
           )
         ],

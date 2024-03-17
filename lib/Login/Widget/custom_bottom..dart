@@ -16,7 +16,7 @@ class DefaultButton extends StatelessWidget {
     Key? key,
     this.height = 50,
     this.width = double.infinity,
-    // this.background = Colors.blue,
+    // this.background = Colors.green,
     required this.function,
     required this.text,
     this.isUpperCase = false,
@@ -32,7 +32,7 @@ class DefaultButton extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(radius), color: Colors.blue),
+            borderRadius: BorderRadius.circular(radius), color: Colors.green),
         child: MaterialButton(
           onPressed: function,
           child: Text(
@@ -48,3 +48,18 @@ class DefaultButton extends StatelessWidget {
     );
   }
 }
+
+void navigateTo(context, widget) => Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => widget,
+      ),
+    );
+
+void navigateAndFinish(context, widget) => Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => widget,
+      ),
+      (route) => false,
+    );
